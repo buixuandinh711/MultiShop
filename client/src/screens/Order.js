@@ -130,7 +130,6 @@ const PaymentForm = () => {
             setValue(e.target.value);
           }}
         >
-          <FormControlLabel value="bkash" control={<Radio />} label="Bkash" />
           <FormControlLabel
             value="cod"
             control={<Radio color="primary" />}
@@ -138,44 +137,6 @@ const PaymentForm = () => {
           />
         </RadioGroup>
       </FormControl>
-      {value === "bkash" ? (
-        <>
-          <Typography style={{ margin: "15px 0" }}>
-            <br />
-            <strong>bKash Personal No: 01629341869</strong>
-          </Typography>
-          <Controller
-            control={control}
-            name="bkash"
-            render={({ field }) => (
-              <TextField
-                id="bkashNumber"
-                label="Bkash Number"
-                variant="outlined"
-                placeholder="Enter Your Bkash Number"
-                fullWidth
-                margin="normal"
-                {...field}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="trxid"
-            render={({ field }) => (
-              <TextField
-                id="trxid"
-                label="Transaction Number"
-                variant="outlined"
-                placeholder="Enter Your Transaction Number"
-                fullWidth
-                margin="normal"
-                {...field}
-              />
-            )}
-          />
-        </>
-      ) : null}
     </div>
   );
 };
